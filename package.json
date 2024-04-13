@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src --format esm",
-    "start": "node dist/server.mjs",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio"
+    "build": "prisma generate && tsc",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
