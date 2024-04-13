@@ -15,6 +15,7 @@ import { errorHandler } from "./error-handler";
 
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
+const port = parseInt(process.env.PORT || '3334')
 
 app.register(fastifyCors, {
     origin: '*', //only for development
@@ -49,6 +50,6 @@ app.register(getEventAttendees)
 
 app.setErrorHandler(errorHandler)
 
-app.listen({ port: 3334, host: '0.0.0.0' }).then(() => {
+app.listen({ port, host: '0.0.0.0' }).then(() => {
     console.log("Server started at port 3334");
 })
