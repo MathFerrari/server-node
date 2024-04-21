@@ -3,7 +3,6 @@ import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUI from "@fastify/swagger-ui";
 import fastifyCors from "@fastify/cors";
 
-
 import { CreateEvent } from "./routes/create-event";
 import { serializerCompiler, validatorCompiler, jsonSchemaTransform, ZodTypeProvider} from "fastify-type-provider-zod"
 import { registerForEvent } from "./routes/register-for-events";
@@ -12,7 +11,6 @@ import { getAttendeeBadge } from "./routes/get-attendee-badge";
 import { checkIn } from "./routes/check-in";
 import { getEventAttendees } from "./routes/get-event-attendees";
 import { errorHandler } from "./error-handler";
-
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
 const port = parseInt(process.env.PORT || '3334')
